@@ -13,4 +13,4 @@
 
 ### **_Ссылка на проект_**
 
-<!-- https://ketrindan.github.io/chess-club/ -->
+<!-- https://ketrindan.github.io/Chess-Tournament/ -->
