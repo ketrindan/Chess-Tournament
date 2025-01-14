@@ -1,0 +1,23 @@
+@keyframes run {
+  0% {
+    transform: translateX(100%);
+}
+
+  100% {
+    transform: translateX(-100%)
+  }
+}
+
+.marquee__line {
+  font-family: 'Merriweather', 'Times New Roman', Times, serif;;
+  font-size: 22px;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  white-space: nowrap;
+  animation: run 7s linear infinite;
+}
+
+.marquee__line span:nth-child(n)::after {
+  content: '\00A0\2022';
+}

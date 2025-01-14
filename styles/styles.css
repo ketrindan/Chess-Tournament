@@ -3,16 +3,22 @@
 @import url(../blocks/page/page.css);
 
 @import url(../blocks/text/text.css);
-@import url(../blocks/text/_bold/text_bold.css);
-@import url(../blocks/text/_logo/text_logo.css);
-@import url(../blocks/text/_header/text_header.css);
+@import url(../blocks/text/_place/text_place_header.css);
+@import url(../blocks/text/_place/text_place_logo.css);
+@import url(../blocks/text/_weight/text_weight_bold.css);
+@import url(../blocks/text/_size/text_size_small.css);
 
 @import url(../blocks/title/title.css);
-@import url(../blocks/title/_center/title_center.css);
-@import url(../blocks/title/_right/title_right.css);
+@import url(../blocks/title/_align/title_align_center.css);
+@import url(../blocks/title/_align/title_align_right.css);
 
 @import url(../blocks/button/button.css);
 @import url(../blocks/button/_transparent/button_transparent.css);
+
+@import url(../blocks/marquee/marquee.css);
+@import url(../blocks/marquee/__line/marquee__line.css);
+@import url(../blocks/marquee/_place/marquee_place_header.css);
+@import url(../blocks/marquee/_place/marquee_place_footer.css);
 
 @import url(../blocks/header/header.css);
 @import url(../blocks/header/__content/header__content.css);
@@ -21,5 +27,7 @@
 @import url(../blocks/header/__title/header__title.css);
 @import url(../blocks/header/__btns-group/header__btns-group.css);
 
-@import url(../blocks/title/title.css);
+@import url(../blocks/main/main.css);
 
+@import url(../blocks/footer/footer.css);
+@import url(../blocks/footer/__content/footer__content.css);

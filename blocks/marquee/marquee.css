@@ -1,0 +1,9 @@
+.marquee {
+  height: 60px;
+  margin: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background-color: #F54932;
+}
