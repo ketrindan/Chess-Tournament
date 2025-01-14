@@ -1,0 +1,6 @@
+.header__content {
+  width: 100%;
+  max-width: 1366px;
+  box-sizing: border-box;
+  padding: 26px 72px;
+}

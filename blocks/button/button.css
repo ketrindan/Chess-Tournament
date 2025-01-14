@@ -1,0 +1,21 @@
+.button {
+  width: 263px;
+  height: 72px;
+  box-sizing: border-box;
+  border-radius: 66px;
+  border: none;
+  background-color: #1F1F1F;
+  color: #FFFFFF;
+  font-family: 'Golos Text', Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 130%;
+  letter-spacing: 0;
+  text-align: center;
+  padding: 10px;
+}
+
+.button:hover {
+  background-color: #FBCE51;
+  cursor: pointer;
+}

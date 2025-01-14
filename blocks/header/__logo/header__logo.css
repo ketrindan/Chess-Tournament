@@ -1,0 +1,5 @@
+.header__logo {
+  display: flex;
+  gap: 6.35px;
+  margin-bottom: 62px;
+}

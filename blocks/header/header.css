@@ -1,0 +1,8 @@
+.header {
+  height: 700px;
+  justify-content: center;
+  display: flex;
+  background-image: url(../../images/Group\ 17.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+}

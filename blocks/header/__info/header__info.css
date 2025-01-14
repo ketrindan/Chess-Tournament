@@ -1,0 +1,7 @@
+.header__info {
+  display: flex;
+  flex-direction: column;
+  max-width: 542px;
+  gap: 24px;
+  margin-bottom: 40px;
+}

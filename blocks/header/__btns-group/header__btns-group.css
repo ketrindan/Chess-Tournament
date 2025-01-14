@@ -1,0 +1,4 @@
+.header__btns-group {
+  display: flex;
+  gap: 16px;
+}

@@ -1,0 +1,16 @@
+.page {
+  min-width: 375px;
+  max-width: 1920px;
+  margin: 0 auto;
+  font-family: 'Merriweather', 'Times New Roman', Times, serif;
+  background-color: #FFFFFF;
+  color: #000000;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
+  transition: 0.5s linear;
+  position: relative;
+}
