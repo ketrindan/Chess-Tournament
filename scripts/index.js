@@ -101,29 +101,42 @@ function carousel(carousel, items, nextBtn, prevBtn, gap, isAuto,) {
   const slideCount = slides.length;
   let slideIndex = 0;
   
-  prevBtn.addEventListener('click', () => {
-    slideIndex = (slideIndex - 1 + slideCount) % slideCount;
-    slide();
-  });
-  
-  nextBtn.addEventListener('click', () => {
-    slideIndex = (slideIndex + 1) % slideCount;
-    slide();
-  });
-  
   const slide = () => {
     const itemWidth = slides[0].clientWidth;
-      
     const slideOffset = -slideIndex * (itemWidth + gap);
-    console.log(slideOffset)
     carousel.style.transform = `translateX(${slideOffset}px)`;
   }
-  
-  window.addEventListener('load', () => {
+
+  const slideNext = () => {
+    slideIndex = (slideIndex + 1) % slideCount;
     slide();
+  }
+
+  const slideBack = () => {
+    slideIndex = (slideIndex - 1 + slideCount) % slideCount;
+    slide();
+  }
+
+  nextBtn.addEventListener('click', () => {
+    slideNext();
   });
+
+  prevBtn.addEventListener('click', () => {
+    slideBack();
+  });
+  
+  const autoSlide = () => {
+    slideNext();
+    setTimeout(() => {
+      autoSlide();
+    }, 4000)
+  }
+  
+  if (isAuto) {
+    autoSlide();
+  }
 }
 
 const participantsItems = document.querySelectorAll(".participants__item");
 
-carousel(participantsContainer, participantsItems, nextParticipantBtn, prevParticipantBtn, 20);
+carousel(participantsContainer, participantsItems, nextParticipantBtn, prevParticipantBtn, 20, true);
