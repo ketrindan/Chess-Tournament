@@ -96,24 +96,60 @@ participants.forEach(function (item) {
   participantsContainer.append(addParticipant(item.name, item.rank));
 });
 
-function carousel(carousel, items, nextBtn, prevBtn, gap, isAuto,) {
+const carousel = (carousel, items, nextBtn, prevBtn, isAuto, counter) => {
   const slides = Array.from(items);
-  const slideCount = slides.length;
+  const carouselWidth = carousel.clientWidth;
+  const itemWidth = items[0].clientWidth;
+  const slideCount = Math.ceil((slides.length * itemWidth) / carouselWidth);
+  const itemsShown = Math.floor(carouselWidth / itemWidth);
+
   let slideIndex = 0;
+
+  if (counter) {
+    counter.textContent = `${itemsShown}/${items.length}`;
+  }
+
+  const checkNextCounter = (n) => {
+    if (n < itemsShown || n > items.length) {
+      return slideIndex === slideCount - 1 ? items.length : itemsShown;
+    }
+
+    return n;
+  }
+
+  const checkPrevCounter = () => {
+    if ((items.length % itemsShown !== 0) && (slideIndex === slideCount - 2)) {
+      counter.textContent = `${items.length - items.length % itemsShown}/${items.length}`;
+    } else if (slideIndex === slideCount - 1) {
+      counter.textContent = `${items.length}/${items.length}`
+    } else {
+      counter.textContent = `${itemsShown * (slideIndex + 1)}/${items.length}`;
+      console.log(slideIndex)
+    }
+  }
   
   const slide = () => {
-    const itemWidth = slides[0].clientWidth;
-    const slideOffset = -slideIndex * (itemWidth + gap);
+    const slideOffset = -slideIndex * carouselWidth;
     carousel.style.transform = `translateX(${slideOffset}px)`;
   }
 
   const slideNext = () => {
     slideIndex = (slideIndex + 1) % slideCount;
+
+    if (counter) {
+      counter.textContent = `${checkNextCounter(itemsShown + itemsShown * slideIndex)}/${items.length}`;
+    }
+
     slide();
   }
 
   const slideBack = () => {
     slideIndex = (slideIndex - 1 + slideCount) % slideCount;
+
+    if (counter) {
+      checkPrevCounter()
+    }
+
     slide();
   }
 
@@ -139,4 +175,4 @@ function carousel(carousel, items, nextBtn, prevBtn, gap, isAuto,) {
 
 const participantsItems = document.querySelectorAll(".participants__item");
 
-carousel(participantsContainer, participantsItems, nextParticipantBtn, prevParticipantBtn, 20, true);
+const participantsCarousel = carousel(participantsContainer, participantsItems, nextParticipantBtn, prevParticipantBtn, true, participantsCounter);
