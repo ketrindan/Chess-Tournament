@@ -19,14 +19,14 @@
         <div class="header__info">
           <h1 class="header__title">
             <span class="title">Превратите уездный город</span>
-            <span class="title title_align_center">в столицу</span>
-            <span class="title title_align_right">земного шара</span>
+            <span class="title text_align_center">в столицу</span>
+            <span class="title text_align_right">земного шара</span>
           </h1>
-          <p class="text text_place_header">Оплатите взнос на телеграммы для организации Международного васюкинского турнира по шахматам</p>
+          <p class="text text_place_header text_align_center">Оплатите взнос на телеграммы для организации Международного васюкинского турнира по шахматам</p>
         </div>
         <nav class="header__btns-group">
-          <button class="button button_black">Поддержать<br>шахматную мысль</button>
-          <button class="button button_transparent">Подробнее<br> о турнире</button>
+          <a href="#info"><button class="button button_black">Поддержать<br>шахматную мысль</button></a>
+          <a href="#participants"><button class="button button_transparent">Подробнее<br> о турнире</button></a>
         </nav>
       </div>
       <div class="marquee marquee_place_header">
@@ -38,8 +38,67 @@
       </div>
     </header>
     <main class="main">
-      <section>
-
+      <section class="info" id="info">
+        <div class="info__header">
+          <h3 class="title title_size_h3">Чтобы поддержать Международный васюкинский турнир посетите лекцию на тему:
+            <span class="text_weight_bold text_color_red">«Плодотворная дебютная идея»</span>
+          </h3>
+          <img src="./images/men_playing.svg" alt="мужчины играют в шахматы">
+        </div>
+        <div class="info__container">
+          <img src="./images/bender.png" alt="гроссмейстер задумался над шахматной доской" class="bender-img">
+          <article class="info__details">
+            <h3 class="title title_size_h3">и Сеанс
+              <span class="text_weight_bold text_color_red">
+                одновременной игры в шахматы на 160 досках
+              </span>
+              гроссмейстера О. Бендера
+            </h3>
+            <table class="table text">
+              <tr>
+                <td class="text_opacity_medium">Место проведения:</td>
+                <td class="text_weight_semibold">Клуб «Картонажник»</td>
+              </tr>
+              <tr>
+                <td class="text_opacity_medium">Дата и время мероприятия:</td>
+                <td class="text_weight_semibold">22 июня 1927 г. в 18:00</td>
+              </tr>
+              <tr>
+                <td class="text_opacity_medium">Стоимость входных билетов:</td>
+                <td class="text_weight_semibold">20 коп.</td>
+              </tr>
+              <tr>
+                <td class="text_opacity_medium">Плата за игру:</td>
+                <td class="text_weight_semibold">50 коп.</td>
+              </tr>
+              <tr>
+                <td class="text_opacity_medium">Взнос на телеграммы:</td>
+                <td class="text_weight_semibold"><span class="line-through">100 руб.</span>21 руб. 16 коп.</td>
+              </tr>
+            </table>
+            <span class="text text_color_blue">По всем вопросам обращаться в администрацию к К. Михельсону</span>
+          </article>
+        </div>
+      </section>
+      <section class="stages">
+        <h2 class="title title_size_h2">Этапы преображения Васюков
+          <span class="text text_color_blue">
+            Будущие источники обогащения васюкинцев
+          </span>
+        </h2>
+        <div class="stages__plan"></div>
+        <img src="./images/plane.svg" alt="самолет-`кукурузник`" class="stages__plane-img">
+      </section>
+      <section class="participants" id="participants">
+        <h2 class="title title_size_h2">Участники турнира</h2>
+        <div class="participants__carousel">
+          <div class="participants__list"></div>
+        </div>
+        <div class="carousel-btns">
+          <button class="carousel-btns__btn carousel-btns_type_prev"></button>
+            <span class="participants__counter text text_size_small">3/6</span>
+          <button class="carousel-btns__btn carousel-btns_type_next"></button>
+        </div>
       </section>
     </main>
     <footer class="footer">
@@ -51,11 +110,32 @@
         </p>
       </div>
       <div class="footer__content">
-        <span class="text text_size_small">Все персонажи, события и цитаты являются вымышленными и не принадлежат создателям сайта. 
+        <span class="text text_size_small text_opacity_min">Все персонажи, события и цитаты являются вымышленными и не принадлежат создателям сайта. 
           С подробностями можно познакомиться в главе XXXIV романа Ильи Ильфа и Евгения Петрова «Двенадцать стульев».
         </span>
     </div>
     </footer>
+
+    <template id="stages-template">
+      <article class="stages__item">
+        <div class="stages__content">
+          <div class="stages__number text text_weight_semibold"></div>
+          <p class="text text_weight_medium stages__description"></p>
+        </div>
+      </article>
+    </template>
+
+    <template id="participants-template">
+      <article class="participants__item">
+        <img class="participants__avatar" alt="аватар участника" src="./images/avatar.svg">
+        <div class="participants__info">
+          <p class="participants__name text text_weight_semibold text_size_large"></p>
+          <p class="participants__rank text text_opacity_min"></p>
+        </div>
+        <button class="button button_more">Подробнее</button>
+      </article>
+    </template>
+
    <script src="./scripts/index.js"></script>
   </body>
 </html>

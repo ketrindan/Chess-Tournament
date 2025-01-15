@@ -1,0 +1,12 @@
+.title_size_h2 {
+  display: inline-block;
+  font-size: 54px;
+  max-width: 60%;
+  line-height: 120%;
+}
+
+.title_size_h2 span.text_color_blue {
+  display: inline-block;
+  max-width: 280px;
+  text-transform: none;
+}

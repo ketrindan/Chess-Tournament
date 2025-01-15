@@ -1,5 +1,6 @@
 .header {
-  height: 700px;
+  max-height: 700px;
+  height: 100vh;
   justify-content: center;
   display: flex;
   flex-direction: column;

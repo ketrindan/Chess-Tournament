@@ -1,0 +1,19 @@
+.carousel-btns__btn {
+  width: 44px;
+  height: 44px;
+  border: none;
+  background-color: #313131;
+  border-radius: 50%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url("../../../images/arrow.svg");
+  cursor: pointer;
+}
+
+.carousel-btns__btn:hover {
+  background-color: #FBCE51;
+}
+
+.carousel-btns__btn:disabled {
+  background-color: #D6D6D6;
+}

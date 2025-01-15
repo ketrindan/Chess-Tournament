@@ -1,0 +1,18 @@
+.button_more {
+  width: 113px;
+  height: 35px;
+  border-radius: 62px;
+  border: 1px solid #3057A2;
+  background-color: transparent;
+  color: #3057A2;
+  line-height: 120%;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+}
+
+.button_more:hover {
+  background-color: #3057A2;
+  color: #FFFFFF;
+  cursor: pointer;
+}

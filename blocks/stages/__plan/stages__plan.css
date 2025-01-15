@@ -1,0 +1,23 @@
+.stages__plan {
+  display: grid;
+  grid-template-columns: repeat(3, 394px);
+  grid-template-rows: repeat(2, 112px) 136px;
+  gap: 20px;
+}
+
+.stages__plan .two-rows {
+  grid-row-start: 1;
+  grid-row-end: 3;
+  grid-column-start: 3;
+  grid-column-end: 4;
+}
+
+.stages__plan .two-cols {
+  grid-column-start: 2;
+  grid-column-end: 4;
+}
+
+.stages__plan .two-cols .stages__description {
+  display: inline-block;
+  max-width: 55%;
+}

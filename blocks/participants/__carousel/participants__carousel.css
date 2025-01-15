@@ -1,0 +1,7 @@
+.participants__carousel {
+  width: 100%;
+  max-width: 1222px;
+  margin-top: 60px;
+  overflow: hidden;
+  align-self: center;
+}

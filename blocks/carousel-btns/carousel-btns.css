@@ -1,0 +1,13 @@
+.carousel-btns {
+  position: absolute;
+  top: 10px;
+  right: 0;
+  display: flex;
+  min-width: 151px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.carousel-btns .carousel-btns_type_prev {
+  transform: rotate(180deg);
+ }

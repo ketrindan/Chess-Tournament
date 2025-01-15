@@ -5,15 +5,28 @@
 @import url(../blocks/text/text.css);
 @import url(../blocks/text/_place/text_place_header.css);
 @import url(../blocks/text/_place/text_place_logo.css);
+@import url(../blocks/text/_weight/text_weight_medium.css);
+@import url(../blocks/text/_weight/text_weight_semibold.css);
 @import url(../blocks/text/_weight/text_weight_bold.css);
 @import url(../blocks/text/_size/text_size_small.css);
+@import url(../blocks/text/_size/text_size_large.css);
+@import url(../blocks/text/_align/text_align_center.css);
+@import url(../blocks/text/_align/text_align_right.css);
+@import url(../blocks/text/_color/text_color_red.css);
+@import url(../blocks/text/_color/text_color_blue.css);
+@import url(../blocks/text/_opacity/text_opacity_medium.css);
+@import url(../blocks/text/_opacity/text_opacity_min.css);
 
 @import url(../blocks/title/title.css);
-@import url(../blocks/title/_align/title_align_center.css);
-@import url(../blocks/title/_align/title_align_right.css);
+@import url(../blocks/title/_size/title_size_h3.css);
+@import url(../blocks/title/_size/title_size_h2.css);
 
 @import url(../blocks/button/button.css);
 @import url(../blocks/button/_transparent/button_transparent.css);
+@import url(../blocks/button/_more/button_more.css);
+
+@import url(../blocks/carousel-btns/carousel-btns.css);
+@import url(../blocks/carousel-btns/__btn/carousel-btns__btn.css);
 
 @import url(../blocks/marquee/marquee.css);
 @import url(../blocks/marquee/__line/marquee__line.css);
@@ -28,6 +41,27 @@
 @import url(../blocks/header/__btns-group/header__btns-group.css);
 
 @import url(../blocks/main/main.css);
+
+@import url(../blocks/info/info.css);
+@import url(../blocks/info/__header/info__header.css);
+@import url(../blocks/info/__container/info__container.css);
+@import url(../blocks/info/__details/info__details.css);
+
+@import url(../blocks/table/table.css);
+
+@import url(../blocks/stages/stages.css);
+@import url(../blocks/stages/__plan/stages__plan.css);
+@import url(../blocks/stages/__item/stages__item.css);
+@import url(../blocks/stages/__content/stages__content.css);
+@import url(../blocks/stages/__number/stages__number.css);
+@import url(../blocks/stages/__plane-img/stages__plane-img.css);
+
+@import url(../blocks/participants/participants.css);
+@import url(../blocks/participants/__carousel/participants__carousel.css);
+@import url(../blocks/participants/__list/participants__list.css);
+@import url(../blocks/participants/__item/participants__item.css);
+@import url(../blocks/participants/__avatar/participants__avatar.css);
+@import url(../blocks/participants/__info/participants__info.css);
 
 @import url(../blocks/footer/footer.css);
 @import url(../blocks/footer/__content/footer__content.css);

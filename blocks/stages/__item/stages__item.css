@@ -1,0 +1,10 @@
+.stages__item {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  padding: 20px;
+  background-image: url(../../../images/background.svg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}

@@ -1,0 +1,5 @@
+.info__details {
+  display: flex;
+  flex-direction: column;
+  padding: 47px 0 35px 0;
+}
