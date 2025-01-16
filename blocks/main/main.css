@@ -3,3 +3,21 @@
   background-color: #FFFFFF;
   padding: 140px 72px 200px 72px;
 }
+
+@media (max-width: 1024px) {
+  .main {
+    padding: 120px 52px 170px 52px;
+  }
+}
+
+@media (max-width: 768px) {
+  .main {
+    padding: 98px 32px 150px 32px;
+  }
+}
+
+@media (max-width: 425px) {
+  .main {
+    padding: 86px 20px 138px 20px;
+  }
+}

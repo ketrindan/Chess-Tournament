@@ -3,3 +3,9 @@
   flex-direction: column;
   padding: 47px 0 35px 0;
 }
+
+@media (max-width: 1200px) {
+  .info__details {
+    padding: 0;
+  }
+}

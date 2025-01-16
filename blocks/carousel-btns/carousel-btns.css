@@ -11,3 +11,13 @@
 .carousel-btns .carousel-btns_type_prev {
   transform: rotate(180deg);
  }
+
+ @media (max-width: 768px) {
+  .carousel-btns {
+    position: static;
+    width: 129px;
+    display: flex;
+    align-self: center;
+    margin-top: 40px;
+  }
+}

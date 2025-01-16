@@ -1,7 +1,6 @@
 .info__header {
-  width: 100%;
+  position: relative;
+  min-height: 250px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  gap: 64px;
 }

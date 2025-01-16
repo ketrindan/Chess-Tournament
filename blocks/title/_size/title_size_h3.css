@@ -2,3 +2,15 @@
   font-size: 36px;
   line-height: 135%;
 }
+
+@media (max-width: 1024px) {
+  .title_size_h3 {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 425px) {
+  .title_size_h3 {
+    font-size: 28px;
+  }
+}

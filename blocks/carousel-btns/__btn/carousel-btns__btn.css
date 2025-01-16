@@ -17,3 +17,10 @@
 .carousel-btns__btn:disabled {
   background-color: #D6D6D6;
 }
+
+@media (max-width: 768px) {
+  .caroucarousel-btns__btnsel-btns {
+    width: 36px;
+    height: 36px;
+  }
+}

@@ -10,3 +10,15 @@
   max-width: 280px;
   text-transform: none;
 }
+
+@media (max-width: 1024px) {
+  .title_size_h2 {
+    font-size: 42px;
+  }
+}
+
+@media (max-width: 768px) {
+  .title_size_h2 {
+    font-size: 36px;
+  }
+}

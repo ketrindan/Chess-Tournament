@@ -1,3 +1,9 @@
 .text_color_blue {
   color: #3057A2;
 }
+
+@media (max-width: 768px) {
+  .text_color_blue {
+    font-size: 18px;
+  }
+}

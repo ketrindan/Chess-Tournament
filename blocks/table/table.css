@@ -32,3 +32,29 @@
   text-decoration-color: red;
   margin-right: 12px;
 }
+
+@media (max-width: 768px) {
+  .table {
+    margin-top: 44px;
+    margin-bottom: 40px;
+  }
+  
+  .table tr td {
+    display: block;
+  }
+
+  .table tr td:nth-of-type(8) {
+    display: table-cell;
+  }
+
+  .table td:nth-child(odd) {
+    border: none;
+    width: 100%;
+    padding-bottom: 12px;
+  }
+
+  .table td:nth-child(even) {
+    padding-left: 0;
+    padding-top: 0;
+  }
+}

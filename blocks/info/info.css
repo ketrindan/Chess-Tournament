@@ -5,3 +5,10 @@
   gap: 17px;
   margin-bottom: 165px;
 }
+
+@media (max-width: 768px) {
+  .info {
+    gap: 34px;
+    margin-bottom: 120px;;
+  }
+}

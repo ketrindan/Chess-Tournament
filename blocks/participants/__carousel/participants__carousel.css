@@ -1,7 +1,25 @@
 .participants__carousel {
-  width: 100%;
-  max-width: 1222px;
+  max-width: 1212px;
   margin-top: 60px;
   overflow: hidden;
   align-self: center;
+}
+
+@media (max-width: 1215px) {
+  .participants__carousel {
+    margin-top: 40px;
+    max-width: 808px;
+  }
+}
+
+@media (max-width: 810px) {
+  .participants__carousel {
+    max-width: 670px;
+  }
+}
+
+@media (max-width: 670px) {
+  .participants__carousel {
+    max-width: 335px;
+  }
 }

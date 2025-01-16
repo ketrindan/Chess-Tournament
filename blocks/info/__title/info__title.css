@@ -1,0 +1,44 @@
+.info__title {
+  max-width: 62.5%;
+}
+
+.info__title img {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translate(0, -50%)
+}
+
+@media (max-width: 1150px) {
+  .info__title {
+    max-width: 50%;
+  }
+
+  .info__title img {
+    width: 350px;
+  }
+}
+
+@media (max-width: 768px) {
+  .info__title {
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    align-items: center;
+  }
+
+  .info__title img {
+    position: static;
+    transform: translate(0, 0);
+    order: 2;
+  }
+
+  .info__title .first-span {
+    order: 1;
+  }
+
+  .info__title .second-span {
+    order: 3;
+  }
+}

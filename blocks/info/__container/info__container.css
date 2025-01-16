@@ -9,3 +9,23 @@
 .info__container img.bender-img {
   margin-left: -30px;
 }
+
+@media (max-width: 1150px) {
+  .info__container img.bender-img  {
+    max-width: 450px;
+  }
+}
+
+@media (max-width: 768px) {
+  .info__container {
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0;
+  }
+
+  .info__container img.bender-img  {
+    max-width: 374px;
+    margin-bottom: 24px;
+  }
+}

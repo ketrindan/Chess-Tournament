@@ -6,3 +6,9 @@
   justify-content: center;
   text-align: center;
 }
+
+@media (max-width: 810px) {
+  .participants__info {
+    gap: 8px;
+  }
+}

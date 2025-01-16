@@ -60,7 +60,23 @@ const participants = [
   {
     name: "Остап Бендер",
     rank: "Гроссмейстер"
-  }
+  },
+  // {
+  //   name: "Остап Бендер",
+  //   rank: "Гроссмейстер"
+  // },
+  // {
+  //   name: "Остап Бендер",
+  //   rank: "Гроссмейстер"
+  // },
+  // {
+  //   name: "Остап Бендер",
+  //   rank: "Гроссмейстер"
+  // },
+  // {
+  //   name: "Остап Бендер",
+  //   rank: "Гроссмейстер"
+  // }
 ];
 
 window.addEventListener('resize', () => {
@@ -132,7 +148,6 @@ const carousel = (carousel, items, nextBtn, prevBtn, isAuto, counter) => {
       counter.textContent = `${items.length}/${items.length}`
     } else {
       counter.textContent = `${itemsShown * (slideIndex + 1)}/${items.length}`;
-      console.log(slideIndex)
     }
   }
   
