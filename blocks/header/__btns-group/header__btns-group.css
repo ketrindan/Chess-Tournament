@@ -1,4 +1,19 @@
 .header__btns-group {
   display: flex;
-  gap: 16px;
+  justify-content: space-between;
+  margin-top: 16px;
+  width: 100%;
+}
+
+.header__btns-group a {
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .header__btns-group {
+    flex-direction: column;
+    margin-top: 32px;
+    gap: 14px;
+    align-items: center;
+  }
 }

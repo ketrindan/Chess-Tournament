@@ -2,5 +2,17 @@
   width: 100%;
   max-width: 1366px;
   box-sizing: border-box;
-  padding: 26px 72px;
+  padding: 26px 72px 0 72px;
+}
+
+@media (max-width: 768px) {
+  .header__content {
+    padding: 22px 38px 0 38px;
+  }
+}
+
+@media (max-width: 425px) {
+  .header__content {
+    padding: 18px 20px 0 20px;
+  }
 }

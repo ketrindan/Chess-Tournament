@@ -3,9 +3,7 @@ const participantsContainer = document.querySelector('.participants__list');
 const participantsCounter = document.querySelector('.participants__counter');
 const nextParticipantBtn = document.querySelector(".carousel-btns_type_next");
 const prevParticipantBtn = document.querySelector(".carousel-btns_type_prev");
-
-let currentIndex = 0;
-let prevIndex;
+const headerCaption = document.querySelector(".text_place_header");
 
 const stages = [
   {
@@ -64,6 +62,16 @@ const participants = [
     rank: "Гроссмейстер"
   }
 ];
+
+window.addEventListener('resize', () => {
+  const screenWidth = document.documentElement.clientWidth;
+
+  if (screenWidth <= 425) {
+    headerCaption.classList.remove('text_align_center')
+  } else {
+    !headerCaption.classList.contains('text_align_center') && headerCaption.classList.add('text_align_center')
+  }
+});
 
 function addStage(number, description) {
   const stagesTemplate = document.querySelector('#stages-template').content;

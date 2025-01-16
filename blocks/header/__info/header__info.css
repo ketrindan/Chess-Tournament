@@ -3,5 +3,25 @@
   flex-direction: column;
   max-width: 542px;
   gap: 24px;
-  margin-bottom: 40px;
+}
+
+@media (max-width: 1024px) {
+  .header__info {
+    max-width: 487px;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header__info {
+    max-width: 80%;
+    position: relative;
+    z-index: 2;
+  }
+}
+
+@media (max-width: 425px) {
+  .header__info {
+    max-width: 100%;;
+  }
 }

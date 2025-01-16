@@ -4,3 +4,9 @@
   color: #595653;
   text-transform: uppercase;
 }
+
+@media (max-width: 425px) {
+  .text_place_logo {
+    font-size: 14.42px;
+  }
+}

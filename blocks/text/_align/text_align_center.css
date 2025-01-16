@@ -1,3 +1,5 @@
 .text_align_center {
   text-align: center;
+  display: inline-block;
+  width: 100%;
 }

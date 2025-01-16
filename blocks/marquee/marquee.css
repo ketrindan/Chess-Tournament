@@ -7,3 +7,9 @@
   overflow: hidden;
   background-color: #F54932;
 }
+
+@media (max-width: 768px) {
+  .marquee {
+    height: 38px;
+  }
+}

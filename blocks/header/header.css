@@ -4,7 +4,37 @@
   justify-content: center;
   display: flex;
   flex-direction: column;
-  background-image: url(../../images/Group\ 17.svg);
+  background-image:  url(../../images/Group\ 17.svg), url(../../images/header-back.svg);
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+}
+
+@media (max-width: 768px) {
+  .header {
+    max-height: 812px;
+    position: relative;
+    background-image: url(../../images/header-back.svg);
+  }
+
+  .header::before{
+    content: '';
+    position: absolute; 
+    top: 50%; 
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background-image: url(../../images/Group\ 17.svg);
+    background-position: center;
+    background-size: cover;
+  }
+}
+
+
+@media (max-width: 425px) {
+  .header::before{
+    background-image: url(../../images/header-mob.svg);
+    background-position: center;
+    background-size: cover;
+  }
 }

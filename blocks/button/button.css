@@ -11,11 +11,33 @@
   font-weight: 500;
   line-height: 130%;
   letter-spacing: 0;
-  text-align: center;
-  padding: 10px;
+  padding: 20px 49px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+a .button {
+  text-decoration: none;
 }
 
 .button:hover {
   background-color: #FBCE51;
   cursor: pointer;
+}
+
+@media (max-width: 1024px) {
+  .button {
+    width: 201px;
+    height: 55px;
+    padding: 7px;
+  }
+}
+
+@media (max-width: 768px) {
+  .button {
+    width: 335px;
+    height: 47px;
+    padding: 18px 43px;
+  }
 }
