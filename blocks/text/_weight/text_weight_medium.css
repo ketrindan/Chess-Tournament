@@ -1,3 +1,9 @@
 .text_weight_medium {
   font-weight: 500;
 }
+
+@media (max-width: 768px) {
+  .text_weight_medium {
+    font-size: 18px
+  }
+}

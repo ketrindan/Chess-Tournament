@@ -19,7 +19,7 @@
 }
 
 @media (max-width: 768px) {
-  .caroucarousel-btns__btnsel-btns {
+  .carousel-btns__btn {
     width: 36px;
     height: 36px;
   }

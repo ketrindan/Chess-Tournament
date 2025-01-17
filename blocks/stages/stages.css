@@ -2,14 +2,12 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 54px;
   margin-bottom: 200px;
   position: relative;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
   .stages {
-    gap: 148px;
     margin-bottom: 120px;
   }
 }

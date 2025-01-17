@@ -27,6 +27,11 @@
 
 @import url(../blocks/carousel-btns/carousel-btns.css);
 @import url(../blocks/carousel-btns/__btn/carousel-btns__btn.css);
+@import url(../blocks/carousel-btns/_stages/carousel-btns_stages.css);
+
+@import url(../blocks/dots/dots.css);
+@import url(../blocks/dots/__item/dots__item.css);
+@import url(../blocks/dots/__item/_active/dots__item_active.css);
 
 @import url(../blocks/marquee/marquee.css);
 @import url(../blocks/marquee/__line/marquee__line.css);
@@ -51,6 +56,7 @@
 @import url(../blocks/table/table.css);
 
 @import url(../blocks/stages/stages.css);
+@import url(../blocks/stages/__carousel/stages__carousel.css);
 @import url(../blocks/stages/__plan/stages__plan.css);
 @import url(../blocks/stages/__item/stages__item.css);
 @import url(../blocks/stages/__content/stages__content.css);

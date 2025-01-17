@@ -8,7 +8,6 @@
 @media (max-width: 1024px) {
   .header__info {
     max-width: 487px;
-    gap: 20px;
   }
 }
 
@@ -22,6 +21,6 @@
 
 @media (max-width: 425px) {
   .header__info {
-    max-width: 100%;;
+    max-width: 100%;
   }
 }

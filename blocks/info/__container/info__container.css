@@ -27,5 +27,6 @@
   .info__container img.bender-img  {
     max-width: 374px;
     margin-bottom: 24px;
+    margin-left: 0;
   }
 }

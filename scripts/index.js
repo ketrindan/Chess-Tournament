@@ -1,9 +1,11 @@
 const stagesContainer = document.querySelector('.stages__plan');
 const participantsContainer = document.querySelector('.participants__list');
 const participantsCounter = document.querySelector('.participants__counter');
-const nextParticipantBtn = document.querySelector(".carousel-btns_type_next");
-const prevParticipantBtn = document.querySelector(".carousel-btns_type_prev");
+const nextParticipantBtn = document.querySelector(".next_participant");
+const prevParticipantBtn = document.querySelector(".prev_participant");
 const headerCaption = document.querySelector(".text_place_header");
+
+let screenWidth = document.documentElement.clientWidth;
 
 const stages = [
   {
@@ -60,34 +62,32 @@ const participants = [
   {
     name: "Остап Бендер",
     rank: "Гроссмейстер"
-  },
-  // {
-  //   name: "Остап Бендер",
-  //   rank: "Гроссмейстер"
-  // },
-  // {
-  //   name: "Остап Бендер",
-  //   rank: "Гроссмейстер"
-  // },
-  // {
-  //   name: "Остап Бендер",
-  //   rank: "Гроссмейстер"
-  // },
-  // {
-  //   name: "Остап Бендер",
-  //   rank: "Гроссмейстер"
-  // }
+  }
 ];
 
-window.addEventListener('resize', () => {
-  const screenWidth = document.documentElement.clientWidth;
+const participantsCarouselSettings = {
+  carousel: participantsContainer,
+  items: [],
+  nextBtn: nextParticipantBtn,
+  prevBtn: prevParticipantBtn,
+  isAuto: true,
+  counter: participantsCounter,
+  needDisabling: false,
+  needDots: false,
+  dotsContainerSelector: ""
+};
 
-  if (screenWidth <= 425) {
-    headerCaption.classList.remove('text_align_center')
-  } else {
-    !headerCaption.classList.contains('text_align_center') && headerCaption.classList.add('text_align_center')
-  }
-});
+const stagesCarouselSettings = {
+  carousel: stagesContainer,
+  items: [],
+  nextBtn: {},
+  prevBtn: {},
+  isAuto: false,
+  counter: false,
+  needDisabling: true,
+  needDots: true,
+  dotsContainerSelector: ".dots"
+};
 
 function addStage(number, description) {
   const stagesTemplate = document.querySelector('#stages-template').content;
@@ -120,7 +120,8 @@ participants.forEach(function (item) {
   participantsContainer.append(addParticipant(item.name, item.rank));
 });
 
-const carousel = (carousel, items, nextBtn, prevBtn, isAuto, counter) => {
+const carousel = (settings) => {
+  const { carousel, items, nextBtn, prevBtn, isAuto, counter, needDisabling, needDots, dotsContainerSelector } = settings;
   const slides = Array.from(items);
   const carouselWidth = carousel.clientWidth;
   const itemWidth = items[0].clientWidth;
@@ -131,6 +132,47 @@ const carousel = (carousel, items, nextBtn, prevBtn, isAuto, counter) => {
 
   if (counter) {
     counter.textContent = `${itemsShown}/${items.length}`;
+  }
+
+  if (needDisabling) {
+    prevBtn.setAttribute('disabled', '');
+  }
+
+  if (needDots) {
+    const dotsContainer = document.querySelector(dotsContainerSelector);
+  
+    if (dotsContainer.children.length == 0) {
+      for (let i = 0; i < slideCount; i++) {
+        let dot = document.createElement("span");
+        
+        dot.classList.add("dots__item");
+        dot.dataset.index = i;
+
+        if (i === slideIndex) {
+          dot.classList.add("dots__item_active")
+        };
+
+        dot.addEventListener('click', () => {
+          slideIndex = i;
+          slide()
+        });
+
+        dotsContainer.appendChild(dot);
+      };
+    }
+  }
+
+  const activateDots = () => {
+    let dots = document.querySelectorAll(".dots__item");
+
+    dots.forEach((dot, i) => {
+      i === slideIndex ? dot.classList.add("dots__item_active") : dot.classList.remove("dots__item_active");
+    })
+  }
+
+  const disableBtns = () => {
+    slideIndex === 0 ? prevBtn.setAttribute('disabled', '') : prevBtn.removeAttribute('disabled');
+    slideIndex === slideCount - 1 ? nextBtn.setAttribute('disabled', '') : nextBtn.removeAttribute('disabled')
   }
 
   const checkNextCounter = (n) => {
@@ -152,6 +194,9 @@ const carousel = (carousel, items, nextBtn, prevBtn, isAuto, counter) => {
   }
   
   const slide = () => {
+    needDisabling && disableBtns();
+    needDots && activateDots()
+
     const slideOffset = -slideIndex * carouselWidth;
     carousel.style.transform = `translateX(${slideOffset}px)`;
   }
@@ -197,5 +242,35 @@ const carousel = (carousel, items, nextBtn, prevBtn, isAuto, counter) => {
 }
 
 const participantsItems = document.querySelectorAll(".participants__item");
+participantsCarouselSettings.items = participantsItems;
+const participantsCarousel = carousel(participantsCarouselSettings);
 
-const participantsCarousel = carousel(participantsContainer, participantsItems, nextParticipantBtn, prevParticipantBtn, true, participantsCounter);
+function activateStagesCarousel() {
+  if (screenWidth <= 1000) {
+    const stagesItems = document.querySelectorAll(".stages__item");
+    const nextStageBtn = document.querySelector(".next_stage");
+    const prevStageBtn = document.querySelector(".prev_stage");
+
+    stagesCarouselSettings.items = stagesItems;
+    stagesCarouselSettings.nextBtn = nextStageBtn;
+    stagesCarouselSettings.prevBtn = prevStageBtn;
+    
+    const stagesCarousel = carousel(stagesCarouselSettings);
+  }
+}
+
+activateStagesCarousel()
+
+window.addEventListener('resize', () => {
+  screenWidth = document.documentElement.clientWidth;
+
+  if (screenWidth <= 425) {
+    headerCaption.classList.remove('text_align_center')
+  } else {
+    !headerCaption.classList.contains('text_align_center') && headerCaption.classList.add('text_align_center')
+  }
+
+  if (screenWidth <= 1000) {
+    activateStagesCarousel()
+  }
+});

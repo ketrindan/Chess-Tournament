@@ -1,0 +1,13 @@
+.carousel-btns_stages {
+  position: static;
+  display: none;
+  margin-top: 28px;
+  min-width: auto;
+  align-self: center;
+}
+
+@media (max-width: 1000px) {
+  .carousel-btns_stages{
+    display: flex;
+  }
+}

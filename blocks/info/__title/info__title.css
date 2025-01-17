@@ -41,4 +41,8 @@
   .info__title .second-span {
     order: 3;
   }
+
+  .info__title img {
+    width: 335px;
+  }
 }

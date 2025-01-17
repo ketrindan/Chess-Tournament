@@ -3,3 +3,23 @@
   bottom: 0;
   right: -60px;
 }
+
+@media (max-width: 1300px) {
+  .stages__plane-img {
+    width: 335px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .stages__plane-img {
+    top: 140px;
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
+}
+
+@media (max-width: 768px) {
+  .stages__plane-img {
+    top: 196px;
+  }
+}

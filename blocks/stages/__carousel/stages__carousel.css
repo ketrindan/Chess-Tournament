@@ -1,0 +1,21 @@
+.stages__carousel {
+  max-width: 1222px;
+  min-height: 400px;
+  margin-top: 54px;
+  overflow: hidden;
+}
+
+@media (max-width: 1000px) {
+  .stages__carousel {
+    margin-top: 148px;
+    max-width: 670px;
+    align-self: center;
+    min-height: auto;
+  }
+}
+
+@media (max-width: 670px) {
+  .stages__carousel {
+    max-width: 335px;
+  }
+}

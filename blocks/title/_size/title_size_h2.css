@@ -22,3 +22,13 @@
     font-size: 36px;
   }
 }
+
+@media (max-width: 500px) {
+  .title_size_h2 {
+    max-width: 100%;
+  }
+  
+  .title_size_h2 span.text_color_blue {
+    max-width: 100%;
+  }
+}

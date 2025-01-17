@@ -1,7 +1,7 @@
 .stages__plan {
   display: grid;
-  grid-template-columns: repeat(3, 394px);
-  grid-template-rows: repeat(2, 112px) 136px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr) 34%;
   gap: 20px;
 }
 
@@ -20,4 +20,22 @@
 .stages__plan .two-cols .stages__description {
   display: inline-block;
   max-width: 55%;
+}
+
+@media (max-width: 1180px) {
+  .stages__plan .two-cols .stages__description {
+    max-width: 50%;
+  }
+}
+
+@media (max-width: 1000px) {
+  .stages__plan {
+    display: flex;
+    gap: 0;
+    height: 300px;
+  }
+
+  .stages__plan .two-cols .stages__description {
+    max-width: 100%;
+  }
 }

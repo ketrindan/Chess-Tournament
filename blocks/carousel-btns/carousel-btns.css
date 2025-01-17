@@ -15,7 +15,7 @@
  @media (max-width: 768px) {
   .carousel-btns {
     position: static;
-    width: 129px;
+    min-width: 129px;
     display: flex;
     align-self: center;
     margin-top: 40px;

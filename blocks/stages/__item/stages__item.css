@@ -8,3 +8,19 @@
   background-size: cover;
   background-repeat: no-repeat;
 }
+
+@media (max-width: 1000px) {
+  .stages__item {
+    display: flex;
+    min-width: 335px;
+    box-sizing: border-box;
+    background-size: 325px 100%;
+    padding-top: 62px;
+  }
+}
+
+@media (max-width: 670px) {
+  .stages__item {
+    background-size: cover;
+  }
+}
