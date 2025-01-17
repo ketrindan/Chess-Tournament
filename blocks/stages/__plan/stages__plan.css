@@ -3,6 +3,7 @@
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, 1fr) 34%;
   gap: 20px;
+  transition: transform 0.5s ease-in-out;
 }
 
 .stages__plan .two-rows {
