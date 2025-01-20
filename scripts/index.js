@@ -89,22 +89,57 @@ const stagesCarouselSettings = {
   dotsContainerSelector: ".dots"
 };
 
-function addStage(number, description) {
+function addStage(number, description, moreNumber, moreDescription) {
   const stagesTemplate = document.querySelector('#stages-template').content;
   const stagesItem = stagesTemplate.querySelector('.stages__item').cloneNode(true);
 
-  stagesItem.querySelector('.stages__number').textContent = number;
-  stagesItem.querySelector('.stages__description').textContent = description;
+  stagesItem.querySelector('.stages__number_main').textContent = number;
+  stagesItem.querySelector('.stages__description_main').textContent = description;
+
+  if (moreNumber && moreDescription) {
+    stagesItem.querySelector('.stages__content_more').style.display = 'flex';
+    stagesItem.querySelector('.stages__number_more').textContent = moreNumber;
+    stagesItem.querySelector('.stages__description_more').textContent = moreDescription;
+  }
 
   return stagesItem;
 };
 
-stages.forEach(function (item) {
-  stagesContainer.append(addStage(item.number, item.description));
-});
 
-stagesContainer.children[2].classList.add('two-rows')
-stagesContainer.children[6].classList.add('two-cols')
+function renderStages() {
+  const render = (n) => {
+    stagesContainer.append(addStage(stages[n].number, stages[n].description));
+  }
+
+  const renderMore = (n) => {
+    stagesContainer.append(addStage(stages[n].number, stages[n].description, stages[n + 1].number, stages[n + 1].description));
+  } 
+
+  if (screenWidth <= 1000) {
+    for (let i = 0; i < stages.length; i++) {
+      if (i === 0) {
+        renderMore(i);
+      } else if (i === 1) {
+        continue;
+      } else if (i === 3) {
+        renderMore(i);
+      } else if (i === 4) {
+        continue;
+      } else {
+        render(i);
+      }
+    }
+  } else {
+      stages.forEach(function (item) {
+        stagesContainer.append(addStage(item.number, item.description));
+      });
+    
+    stagesContainer.children[2].classList.add('two-rows')
+    stagesContainer.children[6].classList.add('two-cols')    
+  }
+};
+
+renderStages();
 
 function addParticipant(name, rank) {
   const participantsTemplate = document.querySelector('#participants-template').content;
@@ -246,31 +281,43 @@ participantsCarouselSettings.items = participantsItems;
 const participantsCarousel = carousel(participantsCarouselSettings);
 
 function activateStagesCarousel() {
-  if (screenWidth <= 1000) {
-    const stagesItems = document.querySelectorAll(".stages__item");
-    const nextStageBtn = document.querySelector(".next_stage");
-    const prevStageBtn = document.querySelector(".prev_stage");
+  const stagesItems = document.querySelectorAll(".stages__item");
+  const nextStageBtn = document.querySelector(".next_stage");
+  const prevStageBtn = document.querySelector(".prev_stage");
 
-    stagesCarouselSettings.items = stagesItems;
-    stagesCarouselSettings.nextBtn = nextStageBtn;
-    stagesCarouselSettings.prevBtn = prevStageBtn;
-    
-    const stagesCarousel = carousel(stagesCarouselSettings);
-  }
+  stagesCarouselSettings.items = stagesItems;
+  stagesCarouselSettings.nextBtn = nextStageBtn;
+  stagesCarouselSettings.prevBtn = prevStageBtn;
+  
+  const stagesCarousel = carousel(stagesCarouselSettings);
 }
 
-activateStagesCarousel()
+screenWidth <= 1000 && activateStagesCarousel()
 
 window.addEventListener('resize', () => {
-  screenWidth = document.documentElement.clientWidth;
+  const newScreenWidth = document.documentElement.clientWidth;
 
-  if (screenWidth <= 425) {
+  if (newScreenWidth <= 425) {
     headerCaption.classList.remove('text_align_center')
   } else {
     !headerCaption.classList.contains('text_align_center') && headerCaption.classList.add('text_align_center')
   }
 
-  if (screenWidth <= 1000) {
-    activateStagesCarousel()
+  if (screenWidth > 1000 && newScreenWidth <= 1000) {
+    activateStagesCarousel();
   }
+
+  if (screenWidth <= 1000 && newScreenWidth > 1000) {
+    stagesContainer.style.transform = `none`;
+  }
+
+  if (screenWidth > 1000 && newScreenWidth <= 1000 || screenWidth <= 1000 && newScreenWidth > 1000) {
+    const list = stagesContainer.querySelectorAll('.stages__item');
+    list.forEach((stage) => {
+      stagesContainer.removeChild(stage);
+    });
+  }
+
+  screenWidth = newScreenWidth;
+  stagesContainer.children.length === 0 && renderStages();
 });

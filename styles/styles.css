@@ -42,7 +42,6 @@
 @import url(../blocks/header/__content/header__content.css);
 @import url(../blocks/header/__logo/header__logo.css);
 @import url(../blocks/header/__info/header__info.css);
-@import url(../blocks/header/__title/header__title.css);
 @import url(../blocks/header/__btns-group/header__btns-group.css);
 
 @import url(../blocks/main/main.css);
@@ -60,6 +59,7 @@
 @import url(../blocks/stages/__plan/stages__plan.css);
 @import url(../blocks/stages/__item/stages__item.css);
 @import url(../blocks/stages/__content/stages__content.css);
+@import url(../blocks/stages/__content/_more/stages__content_more.css);
 @import url(../blocks/stages/__number/stages__number.css);
 @import url(../blocks/stages/__plane-img/stages__plane-img.css);
 
