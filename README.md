@@ -11,6 +11,8 @@
 - Flex-box верстка
 - Grid Layout
 
+[Макет в Figma](https://disk.yandex.ru/d/zciCwNgyeeAn7A)
+
 ### **_Ссылка на проект_**
 
-<!-- https://ketrindan.github.io/Chess-Tournament/ -->
+https://ketrindan.github.io/Chess-Tournament/
