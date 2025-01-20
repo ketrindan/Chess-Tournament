@@ -105,7 +105,6 @@ function addStage(number, description, moreNumber, moreDescription) {
   return stagesItem;
 };
 
-
 function renderStages() {
   const render = (n) => {
     stagesContainer.append(addStage(stages[n].number, stages[n].description));
@@ -178,13 +177,13 @@ const carousel = (settings) => {
   
     if (dotsContainer.children.length == 0) {
       for (let i = 0; i < slideCount; i++) {
-        let dot = document.createElement("span");
+        let dot = document.createElement('span');
         
-        dot.classList.add("dots__item");
+        dot.classList.add('dots__item');
         dot.dataset.index = i;
 
         if (i === slideIndex) {
-          dot.classList.add("dots__item_active")
+          dot.classList.add('dots__item_active')
         };
 
         dot.addEventListener('click', () => {
@@ -198,10 +197,10 @@ const carousel = (settings) => {
   }
 
   const activateDots = () => {
-    let dots = document.querySelectorAll(".dots__item");
+    let dots = document.querySelectorAll('.dots__item');
 
     dots.forEach((dot, i) => {
-      i === slideIndex ? dot.classList.add("dots__item_active") : dot.classList.remove("dots__item_active");
+      i === slideIndex ? dot.classList.add('dots__item_active') : dot.classList.remove('dots__item_active');
     })
   }
 
@@ -237,6 +236,7 @@ const carousel = (settings) => {
   }
 
   const slideNext = () => {
+    console.log("sgdh")
     slideIndex = (slideIndex + 1) % slideCount;
 
     if (counter) {
@@ -276,23 +276,81 @@ const carousel = (settings) => {
   }
 }
 
-const participantsItems = document.querySelectorAll(".participants__item");
+const participantsItems = document.querySelectorAll('.participants__item');
 participantsCarouselSettings.items = participantsItems;
 const participantsCarousel = carousel(participantsCarouselSettings);
 
 function activateStagesCarousel() {
-  const stagesItems = document.querySelectorAll(".stages__item");
-  const nextStageBtn = document.querySelector(".next_stage");
-  const prevStageBtn = document.querySelector(".prev_stage");
+  const stagesItems = document.querySelectorAll('.stages__item');
+  const nextStageBtn = document.querySelector('.next_stage');
+  const prevStageBtn = document.querySelector('.prev_stage');
 
   stagesCarouselSettings.items = stagesItems;
   stagesCarouselSettings.nextBtn = nextStageBtn;
   stagesCarouselSettings.prevBtn = prevStageBtn;
   
-  const stagesCarousel = carousel(stagesCarouselSettings);
+  carousel(stagesCarouselSettings);
 }
 
-screenWidth <= 1000 && activateStagesCarousel()
+screenWidth <= 1000 && activateStagesCarousel();
+
+function transformTable() {
+  const table = document.querySelector('.table');
+  const rows = Array.from(table.getElementsByTagName('tr'));
+
+  rows.forEach((row) => {
+    if (row.textContent.length < 75) {
+      const firstCell = row.getElementsByTagName('td')[0];
+      const secondCell = row.getElementsByTagName('td')[1];
+
+      const subtitle = firstCell.textContent;
+      const details = secondCell.textContent;
+
+      secondCell.style.display = 'none';
+
+      firstCell.style.borderBottom = '2px solid #D0D0D0';
+      firstCell.style.display = 'flex';
+      firstCell.style.gap = '12px';
+      firstCell.classList.remove('text_opacity_medium');
+      firstCell.textContent = '';
+
+      const firstSpan = document.createElement("span");
+      const newSubtitle = document.createTextNode(subtitle);
+      firstSpan.classList.add('text_opacity_medium');
+      firstSpan.appendChild(newSubtitle);
+
+      const secondSpan = document.createElement("span");
+      const newDetails = document.createTextNode(details);
+      secondSpan.classList.add('text_weight_semibold');
+      secondSpan.appendChild(newDetails);
+
+      firstCell.append(firstSpan, secondSpan);
+    }
+  })
+}
+
+function cancelTableTransformation() {
+  const table = document.querySelector('.table');
+  const rows = Array.from(table.getElementsByTagName('tr'));
+
+  rows.forEach((row) => {
+    if (row.textContent.length < 82) {
+      const firstCell = row.getElementsByTagName('td')[0];
+      const secondCell = row.getElementsByTagName('td')[1];
+
+      const subtitle = firstCell.querySelector('.text_opacity_medium').textContent;
+
+      firstCell.replaceChildren();
+      firstCell.textContent = subtitle;
+      firstCell.classList.add('text_opacity_medium');
+
+      secondCell.style.display = 'table-cell';
+      firstCell.style.display = 'table-cell';
+    }
+  })
+}
+
+screenWidth <= 768 && transformTable();
 
 window.addEventListener('resize', () => {
   const newScreenWidth = document.documentElement.clientWidth;
@@ -316,6 +374,14 @@ window.addEventListener('resize', () => {
     list.forEach((stage) => {
       stagesContainer.removeChild(stage);
     });
+  }
+
+  if (screenWidth > 768 && newScreenWidth <= 768) {
+    transformTable();
+  }
+
+  if (screenWidth <= 768 && newScreenWidth > 768) {
+    cancelTableTransformation();
   }
 
   screenWidth = newScreenWidth;

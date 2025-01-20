@@ -38,9 +38,20 @@
     margin-top: 44px;
     margin-bottom: 40px;
   }
-  
-  .table tr td {
+
+  .table td {
+    border-bottom: 2px solid #D0D0D0;
+    padding: 15px 0;
+    box-sizing: border-box;
     display: block;
+  }
+  
+  .table tr:last-child td{
+    border-bottom: none;
+  }
+
+  .table tr:last-child td:first-of-type{
+    padding-bottom: 10px;
   }
 
   .table tr td:nth-of-type(8) {
